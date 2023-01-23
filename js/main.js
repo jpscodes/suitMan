@@ -30,9 +30,8 @@ function getSecretWord() {
 document.querySelector('.secretWord').innerHTML = getSecretWord();
 
 // let userGuess =; set to html button input that's received
-let userGuess = document.querySelector('button').addEventListener('click', handleLetter);
 
-let aButton = document.querySelector("body > main > div.row1btn > button:nth-child(1)").addEventListener('click', printA);
+// let aButton = document.querySelector("body > main > div.row1btn > button:nth-child(1)").addEventListener('click', printA);
 
 // function printA (evt) {
 // 	console.log(evt.target.innerText);
@@ -40,6 +39,7 @@ let aButton = document.querySelector("body > main > div.row1btn > button:nth-chi
 // 	return evt.target.innerText;
 // 	render();
 // }
+let userGuess = document.querySelector('main').addEventListener('click', handleLetter);
 
 function handleLetter(evt) {
 	if (evt.target.tagName !== 'BUTTON') return; 
@@ -55,13 +55,16 @@ function handleLetter(evt) {
 	/*----- functions -----*/
 // hide letters that have already been selected or return message if allowing user to enter letter that lets them know they already
 // made a choice
+function winner() {
 
+};
 function render() {
 
 };
 
-function init () {
+function init() {
 	getSecretWord()
+	winner = null;
 	render();
 };
 
