@@ -1,0 +1,58 @@
+Show screen with: 
+a. suitman stick figure (no suit to start) 
+b. empty boxes/lines/containers that represent the letters of a given hidden word (customized to the words lengeth or all words will have same length)
+c. a place for players to enter their guess (either an assortment of all letters available in button form or a text box where they can enter a letter)
+d. a total of the number of guess they have remaing (and an option to select the amount of guesses they want to increase/decrease difficulty)
+
+then after user makes a selection change the screen to Show:
+a. if the letter they selected was correct/incorrect/already selected via a message
+b. place the letter they selected 
+  b1. in the word list if right
+  b2. if wrong put the letter in a wrong guesses selection
+c. check if they won 
+  c1. if yes give message letting them know, 
+  c2. if not tell them how many guesses they have left, 
+  c3. if no guesses remaing complete suitman, tell user what the word was, and tell them they lost
+d. if they lost make play again option so they can reset the game and play again 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*----- constants -----*/
+Identify what words to use for the game by creating array of possible words.
+
+Store pictures of suit items indexed at 0 to 7 with optonal suit iteam indexed 5, 6 and 7
+
+Make a max number of guesses variable
+
+	/*----- state variables -----*/
+Create board or list state variable for words to be input if correct, incorrect and for pictures to go on the suitman
+Make a winner variable that checks to see if the player has won or lost yet
+
+	/*----- cached elements  -----*/
+the user play button where they select a letter
+
+	/*----- event listeners -----*/
+listen to user inputing letter in open button option that accepts user entering
+or have selection choices for playes
+
+	/*----- functions -----*/
+hide letters that have already been selected or return message if allowing user to enter letter that lets them know they already
+made a choice
