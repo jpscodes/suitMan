@@ -8,6 +8,7 @@ flex-direction: row;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  
 grid-template-rows: 4fr 2fr 1fr 1fr 1fr;
 height: 100vmin;
+width: 350vmin;
 font-size: 30px;
 }
 
@@ -36,8 +37,12 @@ main {
 footer {
   display: grid;
   flex-direction: row;
-  grid-template-columns: 1fr 1fr 1fr;  
+  grid-template-columns: 1fr;  
   grid-template-rows: 1fr;
   grid-column: 3;
   grid-row: 5;
+  font-size: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
