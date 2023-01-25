@@ -45,15 +45,18 @@ function handleLetter(evt) {
 
 
 function getWinner() {
-	if (MAX_GUESSES <= wrongLetters.length) {
+	if (MAX_GUESSES >= wrongLetters.length) {
+		if (guessedWord === secretWord) {
+			winner = true;	
+			return messageEl.innerText = 'You Won!';
+		} else {
+			messageEl.innerText = `You have ${MAX_GUESSES-wrongLetters.length} wrong guesses left!`;
+			console.log('keep trying')
+		} 
+	}; 
+	if ((MAX_GUESSES <= wrongLetters.length)) {
 		return messageEl.innerText = `Sorry you lost :( The word was ${secretWord}`;
-	} 
-	else if (guessedWord === secretWord) {
-		return messageEl.innerText = 'You Won!';
-	} else {
-		messageEl.innerText = `You have ${MAX_GUESSES-wrongLetters.length} wrong guesses left!`;
-		console.log('keep trying')
-	}
+	};
 };
 
 function render() {
@@ -65,7 +68,8 @@ function init() {
 	secretWord = WORDS[Math.floor(Math.random()*WORDS.length)];
 	wrongLetters = [];
 	guessedWord = '_'.repeat(secretWord.length);
-	winner = null;
+	winner = false;
+	messageEl.innerText = 'Start Guessing to Play!';
 	render();
 };
 
