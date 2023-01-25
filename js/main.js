@@ -25,6 +25,7 @@ userGuess.addEventListener('click', handleLetter);
 
 /*----- functions -----*/
 function handleLetter(evt) {
+	if (winner) userGuess.removeEventListener();
 	playersGuess = evt.target.innerText;
 	if (wrongLetters.includes(playersGuess) || guessedWord.includes(playersGuess)) return;
 	if (secretWord.includes(playersGuess)) {
@@ -45,7 +46,7 @@ function handleLetter(evt) {
 
 
 function getWinner() {
-	if (MAX_GUESSES >= wrongLetters.length) {
+	if (MAX_GUESSES > wrongLetters.length) {
 		if (guessedWord === secretWord) {
 			winner = true;	
 			return messageEl.innerText = 'You Won!';
