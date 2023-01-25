@@ -3,15 +3,7 @@ const WORDS = ['BLOB', 'BING', 'PLOP', 'DANG', 'DRAT', 'KNOB', 'GRUB'];
 
 const MAX_GUESSES = 6;
 
-const IMGS = [
-	'img/spaceman-6.jpg',
-	'img/spaceman-6.jpg',
-	'img/spaceman-6.jpg',
-	'img/spaceman-6.jpg',
-	'img/spaceman-6.jpg',
-	'img/spaceman-6.jpg',
-	'C:\Users\Jeremy\Downloads\spaceman-6.jpg',
-]
+
 // Store pictures of suit items indexed at 0 to 7 with optonal suit iteam indexed 5, 6 and 7
 
 /*----- state variables -----*/
@@ -25,35 +17,45 @@ const guessedEl = document.getElementById('guessed-word');
 const playAgainBtn = document.querySelector('footer');
 const userGuess = document.querySelector('main');
 const spaceManImg = document.querySelector('img');
+const messageEl = document.querySelector('h2'); //not used yet
 
+/*----- event listeners -----*/
 playAgainBtn.addEventListener('click', init);
 userGuess.addEventListener('click', handleLetter);
 
+/*----- functions -----*/
 function handleLetter(evt) {
-	
 	playersGuess = evt.target.innerText;
 	if (wrongLetters.includes(playersGuess) || guessedWord.includes(playersGuess)) return;
 	if (secretWord.includes(playersGuess)) {
 		let newGuess = '';
 		secretWord.split('').forEach(function (char, idx) {
 			newGuess += char === playersGuess ? char : guessedWord.charAt(idx);
+			console.log(newGuess)
 		});
 		guessedWord = newGuess;
 	} else {
 		wrongLetters.push(playersGuess);
 	} 
 	// update winner state
-	getWinner();
+	winner = getWinner();
 	render();
 };
 
-/*----- event listeners -----*/
 
 
-/*----- functions -----*/
 function getWinner() {
-	
+	if (MAX_GUESSES <= wrongLetters.length) {
+		return messageEl.innerText = `Sorry you lost :( The word was ${secretWord}`;
+	} 
+	else if (guessedWord === secretWord) {
+		return messageEl.innerText = 'You Won!';
+	} else {
+		messageEl.innerText = `You have ${MAX_GUESSES-wrongLetters.length} wrong guesses left!`;
+		console.log('keep trying')
+	}
 };
+
 function render() {
 	guessedEl.innerText = guessedWord;
 	spaceManImg.src = `spaceman/spaceman-${wrongLetters.length}.jpg`;

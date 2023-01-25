@@ -7,9 +7,9 @@ display: grid;
 flex-direction: row;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  
 grid-template-rows: 4fr 2fr 1fr 1fr 1fr;
-height: 100vmin;
-width: 350vmin;
-font-size: 30px;
+height: 50vmin;
+width: 50vmin;
+font-size: 20px;
 }
 
 
