@@ -15,26 +15,35 @@ const playAgainBtn = document.querySelector('footer');
 const userGuess = document.querySelector('main');
 const spaceManImg = document.querySelector('img');
 const messageEl = document.querySelector('h2'); //not used yet
+const letterEls = [...document.querySelectorAll('.row1btn > button, .row2btn > button, .row3btn > button')];
 
 /*----- event listeners -----*/
 playAgainBtn.addEventListener('click', init);
 userGuess.addEventListener('click', handleLetter);
 
 /*----- functions -----*/
-// forEach(userGuess => {
-// 	let theBtn = userGuess.innerText
-// 	if (wrongLetters.includes())
-// })
 
+user
 
-//Above is button cashing test veriable
+function renderButtonStyle () {
+	letterEls.forEach(function(btn) {
+		const ltr = btn.textContent;
+		if (wrongLetters.includes(ltr)) {
+			btn.className = 'badGuess';
+		} else if (guessedWord.includes(ltr)) {
+			btn.className = 'goodGuess';
+		} else {
+			btn.className = '';
+		}
+	})
+};
+
 
 function handleLetter(evt) {
 	if (winner) userGuess.removeEventListener();
 	playersGuess = evt.target.innerText;
 	if (wrongLetters.includes(playersGuess) || guessedWord.includes(playersGuess)) return;
 	if (secretWord.includes(playersGuess)) {
-		userGuess.style.backgroundColor = 'lightgreen';
 		let newGuess = '';
 		secretWord.split('').forEach(function (char, idx) {
 			newGuess += char === playersGuess ? char : guessedWord.charAt(idx);
@@ -42,7 +51,6 @@ function handleLetter(evt) {
 		});
 		guessedWord = newGuess;
 	} else {
-		document.getElementById('A').style.backgroundColor = 'red';
 		wrongLetters.push(playersGuess);
 	} 
 	// update winner state
@@ -68,6 +76,7 @@ function getWinner() {
 function render() {
 	guessedEl.innerText = guessedWord;
 	spaceManImg.src = `spaceman/spaceman-${wrongLetters.length}.jpg`;
+	renderButtonStyle();
 };
 
 function init() {
