@@ -21,12 +21,20 @@ playAgainBtn.addEventListener('click', init);
 userGuess.addEventListener('click', handleLetter);
 
 /*----- functions -----*/
+// forEach(userGuess => {
+// 	let theBtn = userGuess.innerText
+// 	if (wrongLetters.includes())
+// })
+
+
+//Above is button cashing test veriable
+
 function handleLetter(evt) {
 	if (winner) userGuess.removeEventListener();
 	playersGuess = evt.target.innerText;
 	if (wrongLetters.includes(playersGuess) || guessedWord.includes(playersGuess)) return;
 	if (secretWord.includes(playersGuess)) {
-		userGuess.style.backgroundColor = 'green';
+		userGuess.style.backgroundColor = 'lightgreen';
 		let newGuess = '';
 		secretWord.split('').forEach(function (char, idx) {
 			newGuess += char === playersGuess ? char : guessedWord.charAt(idx);
