@@ -1,6 +1,10 @@
 /*----- constants -----*/
-const WORDS = ['OVER', 'UNDER', 'MONEYLINE', 'SPREAD', 'LOCK', 'PARLAY', 'BET', 'GAMBLING', 'BANKROLL']
-//['BLOB', 'BING', 'PLOP', 'DANG', 'DRAT', 'KNOB', 'GRUB'];
+let planetNames = ['PLUTO', 'MERCURY', 'VENUS', 'EARTH', 'MARS', 'JUPITER', 'SATURN', 'URANUS', 'NEPTUNE', 'CERES', 'HAUMEA', 'ERIS', 'MAKEMAKE', 'PLANETX'];
+
+
+
+// ['OVER', 'UNDER', 'MONEYLINE', 'SPREAD', 'LOCK', 'PARLAY', 'BET', 'GAMBLING', 'BANKROLL']
+const WORDS = ['BLOB', 'BING', 'PLOP', 'DANG', 'DRAT', 'KNOB', 'GRUB', 'LOCK', 'OVER', 'SPREAD', 'FLING', 'BASEBALL', 'SLEEP',];
 const MAX_GUESSES = 6;
 
 /*----- state variables -----*/
@@ -33,7 +37,7 @@ function renderButtonStyle () {
 		} else {
 			btn.className = '';
 		}
-	})
+	});
 };
 
 
@@ -45,7 +49,12 @@ function handleLetter(evt) {
 		let newGuess = '';
 		secretWord.split('').forEach(function (char, idx) {
 			newGuess += char === playersGuess ? char : guessedWord.charAt(idx);
+			console.log(char)
+			console.log(idx)
+			console.log(playersGuess)
 			console.log(newGuess)
+			console.log(guessedWord)
+			console.log(guessedWord.charAt(idx))
 		});
 		guessedWord = newGuess;
 	} else {
@@ -59,16 +68,16 @@ function handleLetter(evt) {
 function getWinner() {
 	if (MAX_GUESSES > wrongLetters.length) {
 		if (guessedWord === secretWord) {
-			winner = true;	
-			return messageEl.innerText = 'You Won!';
+			messageEl.innerText = 'You Won!';
+			return winner = true;	
 		} else {
 			messageEl.innerText = `You have ${MAX_GUESSES-wrongLetters.length} wrong guesses left!`;
-			console.log('keep trying')
 		} 
 	}; 
 	if ((MAX_GUESSES <= wrongLetters.length)) {
 		spaceManImg.style.visibility = 'hidden';
-		return messageEl.innerText = `Sorry you lost :( The word was ${secretWord}`;
+		messageEl.innerText = `Sorry you lost. The word was ${secretWord}`;
+		return winner = 'False';
 	};
 };
 
@@ -84,8 +93,8 @@ function init() {
 	guessedWord = '_'.repeat(secretWord.length);
 	winner = null;
 	messageEl.innerText = 'Start Guessing to Play!';
-	spaceManImg.style.visibility = 'visible';
 	render();
 };
 
 init();
+
