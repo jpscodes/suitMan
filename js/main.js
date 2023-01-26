@@ -67,13 +67,14 @@ function getWinner() {
 		} 
 	}; 
 	if ((MAX_GUESSES <= wrongLetters.length)) {
+		spaceManImg.style.visibility = 'hidden';
 		return messageEl.innerText = `Sorry you lost :( The word was ${secretWord}`;
 	};
 };
 
 function render() {
 	guessedEl.innerText = guessedWord;
-	spaceManImg.src = `spaceman/spaceman-${wrongLetters.length}.jpg`;
+	spaceManImg.src = `spaceman/spaceman-${wrongLetters.length} (1).jpg`;
 	renderButtonStyle();
 };
 

@@ -27,6 +27,7 @@ img {
 
 h2 {
   color: aliceblue;
+  align-content: center;
   grid-column: 3;
   grid-row: 1;
   height: 100%;
@@ -50,9 +51,11 @@ main {
     flex-direction: row;
     grid-column: 2 / 5;
     grid-row: 5;
-    grid-template-columns: 1fr 1fr 1fr;  
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;  
+    grid-template-rows: 1fr 1fr 1fr;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 footer {
@@ -78,12 +81,30 @@ footer {
 
 .row1btn {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;  
+  grid-template-rows: 1fr;
+  grid-column: 1;
+  grid-row: 1;
+  height: 5vh;
+  padding: .1vh;
 }
 
 .row2btn {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;  
+  grid-template-rows: 1fr;
+  grid-column: 1;
+  grid-row: 2;
+  height: 5vh;
+  padding: .1vh;
 }
 
 .row3btn {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;  
+  grid-template-rows: 1fr;
+  grid-column: 1;
+  grid-row: 3;
+  height: 5vh;
+  padding: .1vh;
 }
