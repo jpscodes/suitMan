@@ -1,6 +1,6 @@
 /*----- constants -----*/
-const WORDS = ['BLOB', 'BING', 'PLOP', 'DANG', 'DRAT', 'KNOB', 'GRUB'];
-
+const WORDS = ['OVER', 'UNDER', 'MONEYLINE', 'SPREAD', 'LOCK', 'PARLAY', 'BET', 'GAMBLING', 'BANKROLL']
+//['BLOB', 'BING', 'PLOP', 'DANG', 'DRAT', 'KNOB', 'GRUB'];
 const MAX_GUESSES = 6;
 
 /*----- state variables -----*/
@@ -84,6 +84,7 @@ function init() {
 	guessedWord = '_'.repeat(secretWord.length);
 	winner = null;
 	messageEl.innerText = 'Start Guessing to Play!';
+	spaceManImg.style.visibility = 'visible';
 	render();
 };
 

@@ -6,9 +6,9 @@ body {
 display: grid;
 flex-direction: row;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  
-grid-template-rows: 1fr 2fr 2fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 2fr 2fr 1fr 1fr 1fr 1fr;
 height: 100vh;
-width: 10vh;
+width: 80vh;
 font-size: 20px;
 background-image: url("/spaceman/18973676_893u_0m0s_210802.jpg");
 background-size: cover;
@@ -28,6 +28,7 @@ img {
 h2 {
   color: aliceblue;
   align-content: center;
+  text-align: center;
   grid-column: 3;
   grid-row: 1;
   height: 100%;
@@ -38,8 +39,9 @@ h2 {
 display: grid;
 justify-content: center;
 align-items: center;
+text-align: center;
 flex-direction: row;
-padding: 5px;
+padding: 1vh;
 grid-column: 3;
 grid-row: 4;
 letter-spacing: 5vmin;
@@ -49,7 +51,7 @@ font-size: 10vmin;
 main {
     display: grid;
     flex-direction: row;
-    grid-column: 2 / 5;
+    grid-column: 1 / 6;
     grid-row: 5;
     grid-template-columns: 1fr;  
     grid-template-rows: 1fr 1fr 1fr;
@@ -108,3 +110,4 @@ footer {
   height: 5vh;
   padding: .1vh;
 }
+
