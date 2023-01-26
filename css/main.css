@@ -8,7 +8,7 @@ flex-direction: row;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  
 grid-template-rows: 1fr 2fr 2fr 1fr 1fr 1fr;
 height: 100vh;
-width: 60vh;
+width: 10vh;
 font-size: 20px;
 background-image: url("/spaceman/18973676_893u_0m0s_210802.jpg");
 background-size: cover;
@@ -26,6 +26,7 @@ img {
 }
 
 h2 {
+  color: aliceblue;
   grid-column: 3;
   grid-row: 1;
   height: 100%;
@@ -73,4 +74,16 @@ footer {
 
 .goodGuess {
   background-color: lightgreen;
+}
+
+.row1btn {
+  display: grid;
+}
+
+.row2btn {
+  display: grid;
+}
+
+.row3btn {
+  display: grid;
 }

@@ -23,8 +23,6 @@ userGuess.addEventListener('click', handleLetter);
 
 /*----- functions -----*/
 
-user
-
 function renderButtonStyle () {
 	letterEls.forEach(function(btn) {
 		const ltr = btn.textContent;
