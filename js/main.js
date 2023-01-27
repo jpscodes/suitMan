@@ -1,6 +1,5 @@
 /*----- constants -----*/
-let planetNames = ['PLUTO', 'MERCURY', 'VENUS', 'EARTH', 'MARS', 'JUPITER', 'SATURN', 'URANUS', 'NEPTUNE', 'CERES', 'HAUMEA', 'ERIS', 'MAKEMAKE', 'PLANETX'];
-const WORDS = ['BLOB', 'BING', 'PLOP', 'DANG', 'DRAT', 'KNOB', 'GRUB', 'LOCK', 'OVER', 'SPREAD', 'FLING', 'BASEBALL', 'SLEEP',];
+const WORDS = ['BLOB', 'BING', 'PLOP', 'DANG', 'DRAT', 'KNOB', 'GRUB', 'LOCK', 'OVER', 'SPREAD', 'FLING', 'BASEBALL', 'SLEEP', 'PLUTO', 'MERCURY', 'VENUS', 'EARTH', 'MARS', 'JUPITER', 'SATURN', 'URANUS', 'NEPTUNE', 'CERES', 'HAUMEA', 'ERIS', 'MAKEMAKE', 'PLANETX'];
 const MAX_GUESSES = 6;
 
 /*----- state variables -----*/
@@ -22,7 +21,7 @@ playAgainBtn.addEventListener('click', init);
 userGuess.addEventListener('click', handleLetter);
 
 /*----- functions -----*/
-function renderButtonStyle () {
+function renderButtonStyle() {
 	letterEls.forEach(function(btn) {
 		const ltr = btn.textContent;
 		if (wrongLetters.includes(ltr)) {
@@ -64,7 +63,7 @@ function getWinner() {
 	if ((MAX_GUESSES <= wrongLetters.length)) {
 		spaceManImg.style.visibility = 'hidden';
 		messageEl.innerText = `Sorry you lost. The word was ${secretWord}`;
-		return winner = 'False';
+		return winner = 'False'; 
 	};
 };
 

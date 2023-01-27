@@ -19,14 +19,16 @@
   - HTML
   - CSS
 
+
 ### Getting Started
 
 Click to Play: [Play SpaceMan](https://jpscodes.github.io/suitMan/)
+
 
 ### Icebox Features
 - Add selection message allowing user to pick word theme upon game initializtion 
 - Add hint message for users
 
-#### Refernces
+#### References
 
 Background Image by **brgfx** on Freepik
