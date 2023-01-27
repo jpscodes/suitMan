@@ -14,7 +14,7 @@ const guessedEl = document.getElementById('guessed-word');
 const playAgainBtn = document.querySelector('footer');
 const userGuess = document.querySelector('main');
 const spaceManImg = document.querySelector('img');
-const messageEl = document.querySelector('h2'); //not used yet
+const messageEl = document.querySelector('h2');
 const letterEls = document.querySelectorAll('.row1btn > button, .row2btn > button, .row3btn > button');
 
 /*----- event listeners -----*/
@@ -22,7 +22,6 @@ playAgainBtn.addEventListener('click', init);
 userGuess.addEventListener('click', handleLetter);
 
 /*----- functions -----*/
-
 function renderButtonStyle () {
 	letterEls.forEach(function(btn) {
 		const ltr = btn.textContent;
@@ -36,7 +35,6 @@ function renderButtonStyle () {
 	});
 };
 
-
 function handleLetter(evt) {
 	if (winner) userGuess.removeEventListener();
 	playersGuess = evt.target.innerText;
@@ -45,18 +43,11 @@ function handleLetter(evt) {
 		let newGuess = '';
 		secretWord.split('').forEach(function (char, idx) {
 			newGuess += char === playersGuess ? char : guessedWord.charAt(idx);
-			console.log(char)
-			console.log(idx)
-			console.log(playersGuess)
-			console.log(newGuess)
-			console.log(guessedWord)
-			console.log(guessedWord.charAt(idx))
 		});
 		guessedWord = newGuess;
 	} else {
 		wrongLetters.push(playersGuess);
 	} 
-	// update winner state
 	winner = getWinner();
 	render();
 };
@@ -94,4 +85,3 @@ function init() {
 };
 
 init();
-
