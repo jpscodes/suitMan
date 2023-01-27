@@ -16,25 +16,6 @@ c. check if they won
 d. if they lost make play again option so they can reset the game and play again 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*----- constants -----*/
 Identify what words to use for the game by creating array of possible words.
 
