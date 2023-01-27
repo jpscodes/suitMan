@@ -10,7 +10,7 @@
 
 ### The Game Look
 
-![Game Start](spaceman\SpaceManGameStart.JPG)
+![Game Start](spaceman/SpaceManGameStart.JPG)
 
 ![Game Won](spaceman/SpaceManGameWon.JPG)
 
