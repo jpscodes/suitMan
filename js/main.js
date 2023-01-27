@@ -1,9 +1,5 @@
 /*----- constants -----*/
 let planetNames = ['PLUTO', 'MERCURY', 'VENUS', 'EARTH', 'MARS', 'JUPITER', 'SATURN', 'URANUS', 'NEPTUNE', 'CERES', 'HAUMEA', 'ERIS', 'MAKEMAKE', 'PLANETX'];
-
-
-
-// ['OVER', 'UNDER', 'MONEYLINE', 'SPREAD', 'LOCK', 'PARLAY', 'BET', 'GAMBLING', 'BANKROLL']
 const WORDS = ['BLOB', 'BING', 'PLOP', 'DANG', 'DRAT', 'KNOB', 'GRUB', 'LOCK', 'OVER', 'SPREAD', 'FLING', 'BASEBALL', 'SLEEP',];
 const MAX_GUESSES = 6;
 
@@ -19,7 +15,7 @@ const playAgainBtn = document.querySelector('footer');
 const userGuess = document.querySelector('main');
 const spaceManImg = document.querySelector('img');
 const messageEl = document.querySelector('h2'); //not used yet
-const letterEls = [...document.querySelectorAll('.row1btn > button, .row2btn > button, .row3btn > button')];
+const letterEls = document.querySelectorAll('.row1btn > button, .row2btn > button, .row3btn > button');
 
 /*----- event listeners -----*/
 playAgainBtn.addEventListener('click', init);
@@ -93,6 +89,7 @@ function init() {
 	guessedWord = '_'.repeat(secretWord.length);
 	winner = null;
 	messageEl.innerText = 'Start Guessing to Play!';
+	spaceManImg.style.visibility = 'visible';
 	render();
 };
 
